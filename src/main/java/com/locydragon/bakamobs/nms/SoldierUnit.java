@@ -1,4 +1,4 @@
-package com.locydragon.psychemobs.nms;
+package com.locydragon.bakamobs.nms;
 import com.mojang.authlib.GameProfile;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

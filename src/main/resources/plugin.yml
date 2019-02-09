@@ -1,4 +1,4 @@
-name: PsycheMobs
-main: com.locydragon.psychemobs.PsycheMobs
+name: BakaMobs
+main: com.locydragon.bakamobs.BakaMobs
 version: 0.0.1
 author: [LocyDragon]

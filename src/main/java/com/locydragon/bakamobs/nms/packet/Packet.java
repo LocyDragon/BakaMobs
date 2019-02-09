@@ -1,4 +1,4 @@
-package com.locydragon.psychemobs.nms.packet;
+package com.locydragon.bakamobs.nms.packet;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
