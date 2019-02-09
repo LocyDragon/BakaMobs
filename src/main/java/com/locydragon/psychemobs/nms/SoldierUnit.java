@@ -8,6 +8,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.UUID;
 
+/**
+ * @author Administrator
+ */
 public class SoldierUnit {
 	private static final String NMS_PATH = org.bukkit.Bukkit.getServer().getClass().getPackage().getName()
 			.replace(".", ",").split(",")[3];
@@ -29,8 +32,8 @@ public class SoldierUnit {
 
 	private String name;
 	private Location where;
-	private Object entityPlayer;
-	private Soldier soldier;
+	private Object entityPlayer = null;
+	private Soldier soldier = null;
 
 	static {
 		craftServerClass = getOBCClass("CraftServer");
@@ -92,7 +95,7 @@ public class SoldierUnit {
 		}
 	}
 
-	private static Class<?> getNMSClass(String className) {
+	public static Class<?> getNMSClass(String className) {
 		try {
 			return Class.forName("net.minecraft.server."+ NMS_PATH +"."+ className);
 		} catch (ClassNotFoundException e) {
@@ -143,5 +146,9 @@ public class SoldierUnit {
 		} catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public Soldier getSoldier() {
+		return this.soldier;
 	}
 }
