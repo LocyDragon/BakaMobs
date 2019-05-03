@@ -1,4 +1,5 @@
 package com.locydragon.bakamobs.nms;
+/**
 import com.mojang.authlib.GameProfile;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -7,11 +8,12 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.UUID;
-
+**/
 /**
  * @author Administrator
  */
 public class SoldierUnit {
+	/**
 	private static final String NMS_PATH = org.bukkit.Bukkit.getServer().getClass().getPackage().getName()
 			.replace(".", ",").split(",")[3];
 	private static Class<?> craftServerClass;
@@ -151,4 +153,5 @@ public class SoldierUnit {
 	public Soldier getSoldier() {
 		return this.soldier;
 	}
+	**/
 }

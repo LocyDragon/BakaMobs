@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Packet {
+	/**
 	private InUsePacketType type;
 	private Class<?>[] classes;
 	private Object[] targets;
@@ -35,4 +36,5 @@ public class Packet {
 	public void broadcastPacket() {
 		Bukkit.getOnlinePlayers().forEach(player -> sendPacket(player));
 	}
+	 **/
 }

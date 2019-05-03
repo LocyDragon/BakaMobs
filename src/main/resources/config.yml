@@ -1,0 +1,8 @@
+Settings:
+  Debug: true #Debug模式，没事别打开..
+  Color: true #请务必开启，只对名字有颜色的怪物产生效果
+  ScopeDetectTime: 1 #检测附近敌人的间隔时间(整数，秒，若服务器比较卡，建议调大一点)
+AITable:
+  MrHarry: #AI模板名称
+    name: 'Grand Monster' #绑定怪物的名字
+    scope: 30 #觉察到敌人(玩家)的范围(不管看没看到)这里填写20即 20 * 20 * 20的范围

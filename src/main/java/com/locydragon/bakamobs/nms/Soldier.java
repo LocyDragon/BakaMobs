@@ -4,6 +4,7 @@ package com.locydragon.bakamobs.nms;
  * @author Administrator
  */
 public class Soldier {
+	/**
 	private Object entity;
 	public Soldier(Object entityPlayer) {
 		if (!entityPlayer.getClass().equals(SoldierUnit.entityPlayerClass)) {
@@ -15,4 +16,5 @@ public class Soldier {
 	public Object getObjectEntityPlayer() {
 		return this.entity;
 	}
+	 **/
 }
