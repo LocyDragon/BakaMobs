@@ -23,7 +23,7 @@ public class AIPathFinder {
 			ctClass.addField(navigation);
 			CtConstructor constructor = new CtConstructor(new CtClass[]{pool.getCtClass("net.minecraft.server." + VERSION + ".EntityInsentient")
 			, CtClass.doubleType, pool.get("org.bukkit.Location")}, ctClass);
-			constructor.setBody("{this.entity = entity;this.navigation = (Navigation) this.entity.getNavigation();this.speed = speed;this.loc = loc;}");
+			constructor.setBody("{this.entity = $1;this.navigation = (Navigation) this.entity.getNavigation();this.speed = $2;this.loc = $3;}");
 			ctClass.addConstructor(constructor);
 			CtMethod a = CtMethod.make("public boolean a() {\n" +
 					"        return true;\n" +
@@ -39,7 +39,7 @@ public class AIPathFinder {
 					"        }\n" +
 					"    }", ctClass);
 			ctClass.addMethod(c);
-			return ctClass.getClass();
+			return ctClass.toClass();
 		} catch (CannotCompileException | NotFoundException e) {
 			e.printStackTrace();
 		}

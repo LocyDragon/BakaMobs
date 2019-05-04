@@ -28,7 +28,7 @@ public class EntityAi {
 		this.ai = bindAI;
 		aiHash.put(entity.getUniqueId(), this);
 		BukkitRunnable detectRunnable = new DetectAreaRunner(this);
-		detectRunnable.runTaskTimer(BakaMobs.instance, 0, BakaMobs.config.getInt("Settings.ScopeDetectTime", 1) * 20);
+		detectRunnable.runTaskTimer(BakaMobs.instance, 2, BakaMobs.config.getInt("Settings.ScopeDetectTime", 1) * 20);
 		this.detect = detectRunnable;
 	}
 
