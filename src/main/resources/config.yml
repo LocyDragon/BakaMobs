@@ -1,5 +1,5 @@
 Settings:
-  Debug: true #Debug模式，没事别打开..
+  Debug: true #Debug模式，没事别打开..控制台会被刷爆
   Color: true #请务必开启，只对名字有颜色的怪物产生效果
   ScopeDetectTime: 1 #检测附近敌人的间隔时间(整数，秒，若服务器比较卡，建议调大一点)
   AttackCreative: false #是否会攻击创造模式的玩家
@@ -9,6 +9,7 @@ AITable: #管理AI模块
     ###########怪物基础设置################
     name: 'Grand Monster' #绑定怪物的名字
     speed: 1.5 #移动速度
+
     ###########AI基础设置########################
     scope: 30 #觉察到敌人(玩家)的范围(不管看没看到)这里填写20即 20 * 20 * 20的范围
               #这个AI的优先级最高 (0)
@@ -24,12 +25,12 @@ AITable: #管理AI模块
       - 这里还可以输入别的AI
       - 还可以输入别的动作等等
     BeingCombo: #被连击，这和Settings中的ComboAttackTime有关
-      - JumpShorter
+      - Rush
 
 MoveMent: #AI动作
   Jump: #动作名
     random: 5 #AI优先级 (数字越小优先级越大) 5就是50%
     action: jump ~ 0.5 #动作类型和动作参数 这里的0.5是跳跃的范围 负数即为向后跳
-  JumpShorter:
+  Rush:
     random: 10
-    action: jump ~ 0.4
+    action: rush ~ 1

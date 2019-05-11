@@ -15,4 +15,12 @@ public class Bag<K,V> {
 	public V getValue() {
 		return this.value;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj.equals(this.key)) {
+			return true;
+		}
+		return false;
+	}
 }

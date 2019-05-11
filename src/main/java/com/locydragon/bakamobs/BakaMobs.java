@@ -5,6 +5,7 @@ import com.locydragon.bakamobs.ai.AiPattern;
 import com.locydragon.bakamobs.ai.AttackEvent;
 import com.locydragon.bakamobs.movement.Jump;
 import com.locydragon.bakamobs.movement.MoveMent;
+import com.locydragon.bakamobs.movement.Rush;
 import com.locydragon.bakamobs.nms.asm.AIPathFinder;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -53,6 +54,13 @@ public class BakaMobs extends JavaPlugin {
 		for (String pattern : config.getConfigurationSection("MoveMent").getKeys(false)) {
 			if (config.getString("MoveMent." + pattern + ".action").split("~")[0].trim().equalsIgnoreCase(Jump.typeName())) {
 				Jump moveMent = new Jump(pattern, config.getString("MoveMent." + pattern + ".action")
+						, config.getInt("MoveMent." + pattern + ".random"));
+				moveMent.setJump(Double.valueOf(config.getString("MoveMent." + pattern + ".action").split("~")[1].trim()));
+				moveMents.put(pattern, moveMent);
+				i++;
+				continue;
+			} else if (config.getString("MoveMent." + pattern + ".action").split("~")[0].trim().equalsIgnoreCase(Rush.typeName())) {
+				Rush moveMent = new Rush(pattern, config.getString("MoveMent." + pattern + ".action")
 						, config.getInt("MoveMent." + pattern + ".random"));
 				moveMent.setJump(Double.valueOf(config.getString("MoveMent." + pattern + ".action").split("~")[1].trim()));
 				moveMents.put(pattern, moveMent);
