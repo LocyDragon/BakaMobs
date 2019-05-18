@@ -1,3 +1,4 @@
+Version: 0.0.1-BETA #版本号
 Settings:
   Debug: true #Debug模式，没事别打开..控制台会被刷爆
   Color: true #请务必开启，只对名字有颜色的怪物产生效果
@@ -9,9 +10,9 @@ AITable: #管理AI模块
     ###########怪物基础设置################
     name: 'Grand Monster' #绑定怪物的名字
     speed: 1.5 #移动速度
-
+    attackRange: 3 #攻击范围 -1表示不设置
     ###########AI基础设置########################
-    scope: 30 #觉察到敌人(玩家)的范围(不管看没看到)这里填写20即 20 * 20 * 20的范围
+    scope: 50 #觉察到敌人(玩家)的范围(不管看没看到)这里填写20即 20 * 20 * 20的范围
               #这个AI的优先级最高 (0)
               #-1表示不开启
               #这个智能在哪里? 怪物会主动来找你，即使他看不到你.
@@ -22,10 +23,12 @@ AITable: #管理AI模块
     ##########AI事件设置############
     alive: #当怪物活着的时候，增加什么AI
       - Jump #增加跳跃AI
+      - AfraidPlayer
       - 这里还可以输入别的AI
       - 还可以输入别的动作等等
     BeingCombo: #被连击，这和Settings中的ComboAttackTime有关
       - Rush
+      - Jump
 
 MoveMent: #AI动作
   Jump: #动作名
@@ -33,4 +36,13 @@ MoveMent: #AI动作
     action: jump ~ 0.5 #动作类型和动作参数 这里的0.5是跳跃的范围 负数即为向后跳
   Rush:
     random: 10
-    action: rush ~ 1
+    action: rush ~ 1 #冲
+  SafePlayer:
+    random: 1
+    action: safe ~ 玩家 #不攻击
+  AttackCow:
+    random: 1
+    action: attack ~ 牛 #攻击
+  AfraidPlayer:
+    random: 0
+    action: afraid ~ 玩家 #害怕(注意

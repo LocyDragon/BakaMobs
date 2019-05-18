@@ -17,6 +17,7 @@ public class AiPattern {
 	public int FLOAT = -1;
 	public int breakDoor = -1;
 	public int openDoor = -1;
+	public double attackArea = -1;
 
 	public static boolean tryLoadEntity(org.bukkit.entity.Entity entity) {
 		for (AiPattern pattern : loadedPattern) {
@@ -46,6 +47,7 @@ public class AiPattern {
 					newPattern.FLOAT = this.FLOAT;
 					newPattern.breakDoor = this.breakDoor;
 					newPattern.openDoor = this.openDoor;
+					newPattern.attackArea = this.attackArea;
 					if (BakaMobs.debug) {
 						Bukkit.getLogger().info("Load" + mobName);
 					}

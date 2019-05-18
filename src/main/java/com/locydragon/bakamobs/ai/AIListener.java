@@ -24,6 +24,7 @@ public class AIListener implements Listener {
 				EntityAIManager.floatEntity((LivingEntity)target.entity, target.ai.FLOAT);
 				EntityAIManager.breakDoorEntity((LivingEntity)target.entity, target.ai.breakDoor);
 				EntityAIManager.openDoorEntity((LivingEntity)target.entity, target.ai.openDoor);
+				EntityAIManager.attackArea((LivingEntity)target.entity, target.ai.attackArea);
 			}
 		}, 1);
 	}
@@ -39,6 +40,7 @@ public class AIListener implements Listener {
 						EntityAIManager.floatEntity((LivingEntity)target.entity, target.ai.FLOAT);
 						EntityAIManager.breakDoorEntity((LivingEntity)target.entity, target.ai.breakDoor);
 						EntityAIManager.openDoorEntity((LivingEntity)target.entity, target.ai.openDoor);
+						EntityAIManager.attackArea((LivingEntity)target.entity, target.ai.attackArea);
 					}
 				}, 1);
 			}

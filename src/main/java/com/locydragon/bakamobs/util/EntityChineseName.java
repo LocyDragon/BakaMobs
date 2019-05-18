@@ -1,7 +1,7 @@
 package com.locydragon.bakamobs.util;
 
 public class EntityChineseName {
-	public String toEnglish(String chinese) {
+	public static String toEnglish(String chinese) {
 		switch (chinese) {
 			case "蝙蝠":
 				return "Bat";

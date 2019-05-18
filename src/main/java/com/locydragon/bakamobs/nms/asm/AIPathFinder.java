@@ -36,9 +36,12 @@ public class AIPathFinder {
 			CtMethod c = CtMethod.make("public void c() {\n" +
 					"        if (loc != null) {\n" +
 					"            this.navigation.a(loc.getX(), loc.getY(), loc.getZ(), speed);\n" +
+					"            loc = null;" +
 					"        }\n" +
 					"    }", ctClass);
 			ctClass.addMethod(c);
+			CtMethod equals = CtMethod.make("public boolean equals(Object obj) {  System.out.println(\"yes\"); if (obj != null) { return true; } return false; }", ctClass);
+			ctClass.addMethod(equals);
 			return ctClass.toClass();
 		} catch (CannotCompileException | NotFoundException e) {
 			e.printStackTrace();
