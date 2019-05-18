@@ -1,9 +1,6 @@
 package com.locydragon.bakamobs;
 
-import com.locydragon.bakamobs.ai.AIListener;
-import com.locydragon.bakamobs.ai.AiPattern;
-import com.locydragon.bakamobs.ai.AntiEntityListener;
-import com.locydragon.bakamobs.ai.AttackEvent;
+import com.locydragon.bakamobs.ai.*;
 import com.locydragon.bakamobs.movement.Jump;
 import com.locydragon.bakamobs.movement.MoveMent;
 import com.locydragon.bakamobs.movement.Rush;
@@ -50,6 +47,7 @@ public class BakaMobs extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new AIListener(), this);
 		Bukkit.getPluginManager().registerEvents(new AttackEvent(), this);
 		Bukkit.getPluginManager().registerEvents(new AntiEntityListener(), this);
+		Bukkit.getPluginManager().registerEvents(new LowHealthListener(), this);
 		saveDefaultConfig();
 		config = getConfig();
 		int scripts = 0;
@@ -61,6 +59,7 @@ public class BakaMobs extends JavaPlugin {
 			aip.breakDoor = config.getInt("AITable." + pattern + ".BreakDoor", -1);
 			aip.openDoor = config.getInt("AITable." + pattern + ".OpenDoor", -1);
 			aip.attackArea = config.getDouble("AITable." + pattern + ".attackRange", -1);
+			aip.lowHealth = config.getInt("AITable." + pattern + ".LowHealth", 50);
 			AiPattern.loadedPattern.add(aip);
 			scripts++;
 		}

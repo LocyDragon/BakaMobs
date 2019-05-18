@@ -1,6 +1,6 @@
 Version: 0.0.1-BETA #版本号
 Settings:
-  Debug: true #Debug模式，没事别打开..控制台会被刷爆
+  Debug: false #Debug模式，没事别打开..控制台会被刷爆
   Color: true #请务必开启，只对名字有颜色的怪物产生效果
   ScopeDetectTime: 1 #检测附近敌人的间隔时间(整数，秒，若服务器比较卡，建议调大一点)
   AttackCreative: false #是否会攻击创造模式的玩家
