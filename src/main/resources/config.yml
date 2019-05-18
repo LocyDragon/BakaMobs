@@ -23,12 +23,17 @@ AITable: #管理AI模块
     ##########AI事件设置############
     alive: #当怪物活着的时候，增加什么AI
       - Jump #增加跳跃AI
-      - AfraidPlayer
-      - 这里还可以输入别的AI
+      - SafePlayer
+      - AttackCow
       - 还可以输入别的动作等等
     BeingCombo: #被连击，这和Settings中的ComboAttackTime有关
       - Rush
       - Jump
+      - 还可以输入别的动作等等
+    LowHealth: 60 #血量百分比是多少的时候判断为低血量
+    LowHealthEvents: #血量变少了就开始害怕玩家
+      - AfraidPlayer
+      - 还可以输入别的动作等等
 
 MoveMent: #AI动作
   Jump: #动作名

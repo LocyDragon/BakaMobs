@@ -8,6 +8,7 @@ import com.locydragon.bakamobs.movement.Jump;
 import com.locydragon.bakamobs.movement.MoveMent;
 import com.locydragon.bakamobs.movement.Rush;
 import com.locydragon.bakamobs.movement.disposable.Afraid;
+import com.locydragon.bakamobs.movement.disposable.Attack;
 import com.locydragon.bakamobs.movement.disposable.Safe;
 import com.locydragon.bakamobs.nms.asm.AIAvoid;
 import com.locydragon.bakamobs.nms.asm.AIPathFinder;
@@ -86,6 +87,10 @@ public class BakaMobs extends JavaPlugin {
 				i++;
 			} else if (config.getString("MoveMent." + pattern + ".action").split("~")[0].trim().equalsIgnoreCase(Safe.typeName())) {
 				Safe moveMent = new Safe(pattern, config.getString("MoveMent." + pattern + ".action").split("~")[1].trim());
+				moveMentsDisposable.put(pattern, moveMent);
+				i++;
+			} else if (config.getString("MoveMent." + pattern + ".action").split("~")[0].trim().equalsIgnoreCase(Attack.typeName())) {
+				Attack moveMent = new Attack(pattern, config.getString("MoveMent." + pattern + ".action").split("~")[1].trim());
 				moveMentsDisposable.put(pattern, moveMent);
 				i++;
 			}
